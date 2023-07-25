@@ -1,0 +1,20 @@
+type: matching
+captions:
+- SyntaxError
+- Exception
+options:
+- Compilation step
+- Interpretation step
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7186#comment
+status: Solved
+record: -1
+ordering:
+- 0
+- 1

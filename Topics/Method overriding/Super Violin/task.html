@@ -1,0 +1,23 @@
+<h2>Super Violin</h2>
+<div class="step-text">
+<p></p><p>Below you can see a hierarchy of classes.</p><pre><code class="language-python">class Instrument:
+    def __init__(self, size):
+        self.size = size
+
+class Stringed(Instrument):
+    def __init__(self, n_strings):
+        self.n_strings = n_strings
+
+class Violin(Stringed):
+    def __init__(self, cost):
+        super().__init__(4)
+        # ???
+        self.cost = cost
+
+my_violin = Violin(680)
+print("size:", my_violin.size, 
+      "\nstrings:", my_violin.n_strings, 
+      "\ncost:", my_violin.cost)</code></pre><p>Select what we should write instead of the question marks in the <code class="language-python">Violin</code>'s <code class="language-python">__init__</code> so that the output will be as follows:</p><pre><code class="language-no-highlight">size: 50 
+strings: 4 
+cost: 680</code></pre><p>Remember that <code class="language-python">super().__init__(name) </code> is the same as <code class="language-python">super(Child, self).__init__(name)</code>.</p>
+</div>

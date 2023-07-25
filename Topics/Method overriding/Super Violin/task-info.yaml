@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <code>super().__init__(50)</code>
+- text: <code>super(Violin).__init__(50)</code>
+- text: <code>super(Instrument).__init__(50)</code>
+- text: "<code>super(Stringed, self).__init__(50)</code>"
+- text: "<code>super(Instrument, self).__init__(50)</code>"
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15826#comment
+status: Solved
+record: -1
+local_check: false

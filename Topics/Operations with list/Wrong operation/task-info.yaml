@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: used <code>extend()</code> instead of addition
+- text: used addition instead of <code>append()</code>
+- text: something different
+- text: used <code>append()</code> instead of <code>extend()</code>
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10066#comment
+status: Solved
+record: -1
+local_check: false
