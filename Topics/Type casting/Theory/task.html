@@ -1,0 +1,47 @@
+<h2>Type casting</h2>
+<div class="step-text">
+<p>Computer science, like any other science, actually, has lots of theory attached to it. It never hurts to be familiar with some fundamental theoretical knowledge about a programming language you're learning or already using in practice. It might help you to understand the language better or the difference between several ones. In this topic, we'll learn some theory about types in Python and see how it works in practice.</p><h5 id="dynamic-vs-static-typing">Dynamic vs. Static typing</h5><p>Python is a <strong>dynamically typed </strong>and <strong>strongly typed </strong>language. Dynamic typing means that only runtime objects (values) have a type, but not the variables that store them. You are able to store several values of different types in a single variable during your code execution and no errors will occur.</p><p>The following code is totally valid:</p><pre><code class="language-python">v = 10  # variable v stores an integer value
+
+v = 'hello'  # v now stores a string</code></pre><p>On the other side, in <strong>statically typed</strong> languages each variable has a type that cannot be changed during the runtime, so the code above would fail. Examples of statically typed languages are C++, Java, and Go.</p><h5 id="strong-vs-weak-typing">Strong vs. Weak typing</h5><p><strong>Strong typing</strong> means that implicit type conversions don't happen. For example, even though <code class="language-python">"125"</code> consists only of digits it's a string. To use it in arithmetic operations you need to change its type to an integer or another numerical type. Trying to use it as is leads to a <code class="language-python">TypeError</code>.</p><pre><code class="language-python">&gt;&gt;&gt; "125" + 10
+...
+TypeError: can only concatenate str (not "int") to str</code></pre><p>If Python had a <strong>weak type system</strong>, such value could be interpreted as an integer to successfully perform the operation. Such behavior, when one of the operands is implicitly converted to the type of another operand, is called <strong>type coercion</strong>.</p><p>Since there is no type coercion in Python, the same operand may give different results depending on the types of provided arguments. For example, you can add two strings to get a concatenation. It is also possible to multiply a string by an integer:</p><pre><code class="language-python">print(125 + 125)  #  250
+
+print("125" + "125")  # "125125"
+
+print(125 * 4)  # 500
+
+print("125" * 4)  # "125125125125"
+
+print("This is a number:", 125)  # "This is a number: 125"</code></pre><p>The example also shows that you can print values of different types if you separate them with commas in the parentheses. The <code class="language-python">print()</code> function will print all the arguments delimited by a space.</p><h5 id="explicit-type-casting">Explicit type casting</h5><p>The process of converting a value to another type is also called <strong>type casting</strong>. Though implicit type casting is almost not allowed in Python you will often find yourself in need to define an explicit type conversion within your code. This happens a lot when you work with the user's input.</p><p>imagine you are adding two number, one of which has <code class="language-python">int</code> type and the other has a <code class="language-python">float</code> type. In this case, during the addition operation, <code class="language-python">int</code> type will be converted to <code class="language-python">float</code>, but the variable itself will not change its type. This example is shown in the code below.</p><pre><code class="language-python">a = 5
+print(type(a)) # &lt;class 'int'&gt;
+
+b = 0.7
+print(type(b)) # &lt;class 'float'&gt;
+
+c = a + b
+print(type(c)) # &lt;class 'float'&gt;
+
+print(a, type(a)) # 5 &lt;class 'int'&gt;</code></pre><p>Imagine you asked a user to provide an age that you will later use in some calculations. To convert a string to integer type you can use the built-in <code class="language-python">int()</code> function. This is an example of explicit type casting.</p><pre><code class="language-python">raw_age = "22"
+print(type(raw_age))  # &lt;class 'str'&gt;
+
+
+age = int(raw_age)
+print(type(age))  # &lt;class 'int'&gt;
+</code></pre><p>The <code class="language-python">type</code> function is used to find out the type of the value provided.</p><p>To cast an integer to the string type use the <code class="language-python">str()</code> function:</p><pre><code class="language-python">age = 22
+print(type(age))  # &lt;class 'int'&gt;
+
+string_age = str(age)
+print(type(string_age))  # &lt;class 'str'&gt;</code></pre><p>As you noticed, to cast a value to some type we use the function with the same name. If conversion between two types is not allowed you will see an error. Except for the <code class="language-python">str()</code> and <code class="language-python">int()</code> functions we covered above there is also a <code class="language-python">float()</code> function. It converts a given value to the float type.</p><p>Here are some more examples of casting between different types:</p><pre><code class="language-python">f = 3.14  # the type is float
+print(type(f))  # &lt;class 'float'&gt;
+
+s = str(f)  # converting float to string
+print(type(s))  # &lt;class 'str'&gt;
+
+i = int(f)  # while converting a float value to an integer its fractional part is discarded
+print(i)  # 3
+print(type(i))  # &lt;class 'int'&gt;
+
+f = float(i)
+print(f)  # 3.0
+print(type(f))  # &lt;class 'float'&gt;</code></pre><p></p><div class="alert alert-primary"><p>It is important to remember that you can cast the value of any type to a string in Python. This fact is often used for debugging purposes.</p></div><p></p><h5 id="summary">Summary</h5><p>Let's sum up what this topic was about:</p><ul><li><p>Python is a dynamically typed and strongly typed language.</p></li><li><p>The difference between dynamic and static typing.</p></li><li><p>The difference between strong and weak typing.</p></li><li><p>Using explicit type casting in Python.</p></li></ul>
+</div>

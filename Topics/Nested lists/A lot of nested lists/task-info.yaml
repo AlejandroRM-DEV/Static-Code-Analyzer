@@ -1,0 +1,17 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    n = int(input())
+
+    my_list =  # your code here
+    print(my_list)
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6942#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 26 Jul 2023 16:06:32 UTC"
+record: -1
+submission_language: python3
