@@ -446,6 +446,13 @@ files:
     if __name__ == '__main__':
         AnalyzerTest("analyzer.code_analyzer").run_tests()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/112/stages/612/implement#comment
+- name: tests.py
+  visible: false
+  text: |-
+    from test.tests import AnalyzerTest
+
+    if __name__ == '__main__':    AnalyzerTest("analyzer.code_analyzer").run_tests()
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9906#comment
 status: Unchecked
 record: -1

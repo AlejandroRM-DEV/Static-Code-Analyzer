@@ -83,9 +83,9 @@ files:
     if __name__ == '__main__':
         AnalyzerTest("analyzer.code_analyzer").run_tests()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/112/stages/609/implement#comment
+feedback_link: https://hyperskill.org/learn/step/9903#comment
 status: Solved
 feedback:
   message: Congratulations!
   time: "Tue, 25 Jul 2023 15:53:33 UTC"
-record: -1
+record: 1

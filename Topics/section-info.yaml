@@ -18,3 +18,5 @@ content:
 - Lambda functions
 - Iterators
 - Slicing
+- Sorting a list
+- Functional decomposition
