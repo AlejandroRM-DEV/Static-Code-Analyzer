@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+import re
 
 
 class CodeAnalyzer:
@@ -9,6 +10,9 @@ class CodeAnalyzer:
     CODE_S004 = "S004 Less than two spaces before inline comments"
     CODE_S005 = "S005 TODO found (in comments only and case-insensitive)"
     CODE_S006 = "S006 More than two blank lines preceding"
+    CODE_S007 = "S007 Too many spaces after construction_name (def or class)"
+    CODE_S008 = "S008 Class name should be written in CamelCase"
+    CODE_S009 = "S009 Function name should be written in snake_case"
 
     def test_s001(self):
         if len(self.line) > 79:
@@ -67,6 +71,33 @@ class CodeAnalyzer:
 
         return error
 
+    def test_s007(self):
+        error = None
+        stripped = self.line.lstrip()
+        if stripped.startswith("class") or stripped.startswith("def"):
+            if re.match(r"(class|def)\s{2,}[A-Za-z()]+:", stripped):
+                error = f"{self.filename}: Line {self.line_num}: {self.CODE_S007}"
+
+        return error
+
+    def test_s008(self):
+        error = None
+        stripped = self.line.lstrip()
+        if stripped.startswith("class"):
+            if not re.match(r"class\s+([A-Z][a-z()]+)+:", stripped):
+                error = f"{self.filename}: Line {self.line_num}: {self.CODE_S008}"
+
+        return error
+
+    def test_s009(self):
+        error = None
+        stripped = self.line.lstrip()
+        if stripped.startswith("def"):
+            if not re.match(r"def\s+(_{0,2}[a-z_]+_{0,2}[()]+)+:", stripped):
+                error = f"{self.filename}: Line {self.line_num}: {self.CODE_S009}"
+
+        return error
+
     def run(self):
         errors = []
         with open(self.filename, "r") as file:
@@ -80,6 +111,9 @@ class CodeAnalyzer:
                 errors.append(self.test_s004())
                 errors.append(self.test_s005())
                 errors.append(self.test_s006())
+                errors.append(self.test_s007())
+                errors.append(self.test_s008())
+                errors.append(self.test_s009())
 
         for error in [error for error in errors if error is not None]:
             print(error)

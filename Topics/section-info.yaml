@@ -24,3 +24,7 @@ content:
 - Nested lists
 - Copy of an object
 - Function annotations
+- Regexps in Python
+- Escaping in regexps
+- Regexp sets and ranges
+- Shorthands
