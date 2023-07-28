@@ -337,5 +337,9 @@ files:
     if __name__ == '__main__':    AnalyzerTest("analyzer.code_analyzer").run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/9907#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Fri, 28 Jul 2023 04:52:53 UTC"
 record: -1
